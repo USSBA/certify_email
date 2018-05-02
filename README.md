@@ -60,6 +60,7 @@ TODO: describe the actual API this gem supports
 
 ## Error Handling
 * Calling a Gem method with no or empty parameters, e.g.:
+```
 CertifyEmail::Email.where  {}
 CertifyEmail::Email.create {}
 ```
