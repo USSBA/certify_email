@@ -1,6 +1,6 @@
 # CertifyEmail
 
-TODO: This is a thin wrapper for the [Email API](https://github.com/SBA-ONE/email_api) to handle basic GET and POST operations for email entries.
+This is a thin wrapper for the [Email API](https://github.com/USSBA/email_api) to handle basic GET and POST operations for email entries.
 
 
 #### Table of Contents
