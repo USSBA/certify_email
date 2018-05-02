@@ -1,6 +1,7 @@
 module CertifyEmail
   # Email class that handles getting and creating new Email objects
   class Email < Resource
+    # rubocop:disable Metrics/AbcSize
     def self.send(params = nil)
       return CertifyEmail.bad_request if empty_params(params)
       safe_params = email_safe_params(params)
@@ -13,6 +14,7 @@ module CertifyEmail
     rescue Excon::Error => error
       handle_excon_error(error)
     end
+    # rubocop:enable Metrics/AbcSize
 
     private_class_method
 
