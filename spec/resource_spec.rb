@@ -12,7 +12,7 @@ RSpec.describe CertifyEmail do
     end
 
     it "has correct write_timeout" do
-      expect(params[:write_timeout]).to eq(timeout)
+      expect(params[:write_timeout]).to  eq(timeout)
     end
 
     it "has correct read_timeout" do
