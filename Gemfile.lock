@@ -121,7 +121,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport (~> 5.1)
   bundler (~> 1.15)
   byebug
   certify_email!

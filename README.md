@@ -1,6 +1,6 @@
 # CertifyEmail
 
-TODO: This is a thin wrapper for the [Email API](https://github.com/SBA-ONE/email_api) to handle basic GET and POST operations for email entries.
+This is a thin wrapper for the [Email API](https://github.com/USSBA/email_api) to handle basic GET and POST operations for email entries.
 
 
 #### Table of Contents
@@ -43,7 +43,7 @@ This will pull the head of the develop branch in as a gem.  If there are updates
 ## Usage
 
 ### Configuration
-Set the (TODO: API Name) API URL in your apps `config/initializers` folder, you probably also want to include an `email.yml` under `config` to be able to specify the URL based on your environment.
+Set the Certify Email API URL in your apps `config/initializers` folder, you probably also want to include an `email.yml` under `config` to be able to specify the URL based on your environment.
 
 ```
 CertifyEmail.configure do |config|
@@ -55,20 +55,26 @@ end
 
 ### Email
 
-TODO: describe the actual API this gem supports
+This gem will send a request to the Email API to a given email address with the send method. This method requires that the address, a message, and the template used to format the email be passed in as parameters. Currently the only available template is the "basic_template".
+```
+CertifyEmail::Email.send{
+  email: 'foo@bar.com',
+  message: 'This is a message',
+  template: 'basic_template'
+}
+```
 
 
 ## Error Handling
 * Calling a Gem method with no or empty parameters, e.g.:
-CertifyEmail::Email.where  {}
-CertifyEmail::Email.create {}
+```
+CertifyEmail::Email.send {}
 ```
 will return a bad request:
 `{body: "Bad Request: No parameters submitted", status: 400}`
 * Calling a Gem method with invalid parameters:
 ```
-CertifyEmail::Email.where  {foo: 'bar'}
-CertifyEmail::Email.create {foo: 'bar'}
+CertifyEmail::Email.send {foo: 'bar'}
 ```
 will return an unprocessable entity error:
 `{body: "Unprocessable Entity: Invalid parameters submitted", status: 422}`
