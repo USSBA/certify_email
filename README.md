@@ -55,7 +55,7 @@ end
 
 ### Email
 
-This gem will send a request to the Email API to given email address with the send method. This method requires the address, a message, and the template used to format the email be passed in as parameters. Currently the only available template is the "basic_template".
+This gem will send a request to the Email API to a given email address with the send method. This method requires that the address, a message, and the template used to format the email be passed in as parameters. Currently the only available template is the "basic_template".
 ```
 CertifyEmail::Email.send{
   email: 'foo@bar.com',
