@@ -3,12 +3,6 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [0.2.0] - 2018-05-11
-### shared-services-sprint-42
-### Added
-  - HUB-1219
-    - Added subject parameter
-
 ## [0.1.0] - 2018-05-11
 ### shared-services-sprint-42
 ### Added
