@@ -5,12 +5,14 @@ RSpec.describe CertifyEmail do
     context "with the correct paramters" do
       let(:email) { Faker::Internet.email }
       let(:message) { Faker::HeyArnold.quote }
+      let(:subject) { Faker::HeyArnold.quote }
       let(:template) { %w[basic_template].sample }
       let(:email_parameters) do
         {
           email: email,
           message: message,
-          template: template
+          template: template,
+          subject: subject
         }
       end
       let(:send_email) { CertifyEmail::Email.send(email_parameters) }
