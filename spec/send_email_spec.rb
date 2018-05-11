@@ -1,31 +1,47 @@
 require "spec_helper"
+require 'vcr'
 
-RSpec.describe CertifyEmail do
+RSpec.describe CertifyEmail do 
   describe "send an email" do
-    context "with the correct paramters" do
+    context "with the correct parameters" do
       let(:email) { Faker::Internet.email }
       let(:message) { Faker::HeyArnold.quote }
-      let(:template) { %w[basic_template].sample }
+      let(:template) { %w[basic_email].sample }
       let(:email_parameters) do
         {
-          email: email,
+          recipient: email,
           message: message,
           template: template
         }
       end
-      let(:send_email) { CertifyEmail::Email.send(email_parameters) }
 
-      before do
-        Excon.stub({method: :post}, status: 200)
-      end
+      #VCR.use_cassette 'send_email' do
 
-      it "will return a 200 status" do
-        expect(send_email[:status]).to eq(200)
-      end
+        let(:send_email) { CertifyEmail::Email.send(email_parameters) }
+
+        before do
+           #Excon.stub({method: :post}, status: 200)
+        end
+      
+        it "will return a 200 status" do
+          expect(send_email[:status]).to eq(200)
+        end
+
+        # it "will have correct url" do
+        #   expect(send_email[]).to eq(message)
+        # end
+        # connection = Excon.new 'http://localhost:3008/email_api/send_email', connect_timeout: '360'
+        # response = connection.request method: :post,
+        #                             path: 'email_api/send_email',
+        #                             body: 'body',
+        #                             headers:  { "Content-Type" => "application/json" } 
+      #end
+
     end
   end
+
   describe "with incorrect parameters" do
-    context 'with no paramters' do
+    context 'with no parameters' do
       let(:no_parameters) { CertifyEmail::Email.send }
 
       it 'will return a 400 status' do

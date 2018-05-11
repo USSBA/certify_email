@@ -1,0 +1,100 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3008/email_api/send_email
+    body:
+      encoding: UTF-8
+      string: '{"message":"But you see, Arnold and tall hair boy, I don’t want to
+        be famous! I want to live my life simply! I like my banana wallpaper, I like
+        doing my own laundry! Just give me the simple things!","template":"basic_template"}'
+    headers:
+      User-Agent:
+      - excon/0.62.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/sba.email-api.v1
+  response:
+    status:
+      code: 500
+      message: 
+    headers:
+      Content-Type:
+      - text/plain; charset=utf-8
+      X-Request-Id:
+      - 55a8fe6b-7dce-4f6a-be12-f48cb5898e9b
+      X-Runtime:
+      - '0.014744'
+    body:
+      encoding: ASCII-8BIT
+      string: "NoMethodError at /email_api/send_email\n======================================\n\n>
+        undefined method `[]' for nil:NilClass\n\napp/controllers/email_api/v1/email_controller.rb,
+        line 25\n---------------------------------------------------------\n\n```
+        ruby\n   20           params.permit(:template, *required_options)\n   21         end\n
+        \  22   \n   23         def required_options\n   24           template = params[:template].to_sym\n>
+        \ 25           options = EMAIL_CONFIG[:emails][template][:required_options]\n
+        \  26           options.flatten.uniq.map(&:to_sym)\n   27         end\n   28
+        \  \n   29         def validate_params\n   30           errors = []\n```\n\nApp
+        backtrace\n-------------\n\n - app/controllers/email_api/v1/email_controller.rb:25:in
+        `required_options'\n - app/controllers/email_api/v1/email_controller.rb:33:in
+        `validate_params'\n\nFull backtrace\n--------------\n\n - app/controllers/email_api/v1/email_controller.rb:25:in
+        `required_options'\n - app/controllers/email_api/v1/email_controller.rb:33:in
+        `validate_params'\n - activesupport (5.1.6) lib/active_support/callbacks.rb:413:in
+        `block in make_lambda'\n - activesupport (5.1.6) lib/active_support/callbacks.rb:197:in
+        `block (2 levels) in halting'\n - actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in
+        `block (2 levels) in <module:Callbacks>'\n - activesupport (5.1.6) lib/active_support/callbacks.rb:198:in
+        `block in halting'\n - activesupport (5.1.6) lib/active_support/callbacks.rb:507:in
+        `block in invoke_before'\n - activesupport (5.1.6) lib/active_support/callbacks.rb:507:in
+        `invoke_before'\n - activesupport (5.1.6) lib/active_support/callbacks.rb:130:in
+        `run_callbacks'\n - actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in
+        `process_action'\n - actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in
+        `process_action'\n - actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in
+        `block in process_action'\n - activesupport (5.1.6) lib/active_support/notifications.rb:166:in
+        `block in instrument'\n - activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in
+        `instrument'\n - activesupport (5.1.6) lib/active_support/notifications.rb:166:in
+        `instrument'\n - actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in
+        `process_action'\n - actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in
+        `process_action'\n - activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in
+        `process_action'\n - actionpack (5.1.6) lib/abstract_controller/base.rb:124:in
+        `process'\n - actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'\n
+        - actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'\n -
+        actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'\n - actionpack
+        (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'\n - actionpack
+        (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'\n - actionpack
+        (5.1.6) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'\n
+        - actionpack (5.1.6) lib/action_dispatch/routing/mapper.rb:46:in `serve'\n
+        - actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in
+        serve'\n - actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in
+        `serve'\n - actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in
+        `call'\n - rack (2.0.4) lib/rack/etag.rb:25:in `call'\n - rack (2.0.4) lib/rack/conditional_get.rb:38:in
+        `call'\n - rack (2.0.4) lib/rack/head.rb:12:in `call'\n - activerecord (5.1.6)
+        lib/active_record/migration.rb:556:in `call'\n - actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in
+        `block in call'\n - activesupport (5.1.6) lib/active_support/callbacks.rb:97:in
+        `run_callbacks'\n - actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in
+        `call'\n - actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in
+        `call'\n - better_errors (2.4.0) lib/better_errors/middleware.rb:84:in `protected_app_call'\n
+        - better_errors (2.4.0) lib/better_errors/middleware.rb:79:in `better_errors_call'\n
+        - better_errors (2.4.0) lib/better_errors/middleware.rb:57:in `call'\n - actionpack
+        (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'\n
+        - actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in
+        `call'\n - railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'\n -
+        railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'\n - activesupport
+        (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'\n - activesupport
+        (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'\n - activesupport
+        (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'\n - railties (5.1.6)
+        lib/rails/rack/logger.rb:24:in `call'\n - actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in
+        `call'\n - actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in
+        `call'\n - rack (2.0.4) lib/rack/runtime.rb:22:in `call'\n - activesupport
+        (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in
+        `call'\n - actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in
+        `call'\n - actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in
+        `call'\n - rack (2.0.4) lib/rack/sendfile.rb:111:in `call'\n - railties (5.1.6)
+        lib/rails/engine.rb:522:in `call'\n - puma (3.11.4) lib/puma/configuration.rb:225:in
+        `call'\n - puma (3.11.4) lib/puma/server.rb:632:in `handle_request'\n - puma
+        (3.11.4) lib/puma/server.rb:446:in `process_client'\n - puma (3.11.4) lib/puma/server.rb:306:in
+        `block in run'\n - puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in
+        spawn_thread'\n\n"
+    http_version: 
+  recorded_at: Fri, 11 May 2018 19:53:51 GMT
+recorded_with: VCR 4.0.0
