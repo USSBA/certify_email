@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [0.2.0] - 2018-05-125
+## [0.2.0] - 2018-05-25
 ### shared-services-sprint-42
 ### Changed
   - HUB-1219
