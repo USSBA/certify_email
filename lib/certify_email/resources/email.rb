@@ -25,11 +25,7 @@ module CertifyEmail
 
     # helper for white listing parameters
     def self.email_safe_params(params)
-<<<<<<< HEAD
       permitted_keys = %w[id template recipient message subject inviter_name business_name program]
-=======
-      permitted_keys = %w[id template recipient message]
->>>>>>> develop
       symbolize_params(params.select { |key, _| permitted_keys.include? key.to_s })
     end
 
