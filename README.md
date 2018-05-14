@@ -60,8 +60,7 @@ This gem will send a request to the Email API to a given email address with the 
 CertifyEmail::Email.send{
   email: 'foo@bar.com',
   message: 'This is a message',
-  template: 'basic_template',
-  subject: 'This is a subject'
+  template: 'basic_template'
 }
 ```
 
