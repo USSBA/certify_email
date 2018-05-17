@@ -29,9 +29,9 @@ RSpec.describe CertifyEmail do
 
   describe "with incorrect parameters" do
     context 'with no paramters' do
-      
+
       let(:no_parameters) { CertifyEmail::Email.send_email }
-      
+
       it 'will return a 400 status' do
         expect(no_parameters[:status]).to eq(400)
       end
