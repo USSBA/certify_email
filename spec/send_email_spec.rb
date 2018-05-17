@@ -13,7 +13,7 @@ RSpec.describe CertifyEmail do
           template: template
         }
       end
-      let(:send_email) { CertifyEmail::Email.send(email_parameters) }
+      let(:send_email) { CertifyEmail::Email.send_email(email_parameters) }
 
       before do
         Excon.stub({method: :post}, status: 200)
@@ -26,7 +26,7 @@ RSpec.describe CertifyEmail do
   end
   describe "with incorrect parameters" do
     context 'with no paramters' do
-      let(:no_parameters) { CertifyEmail::Email.send }
+      let(:no_parameters) { CertifyEmail::Email.send_email }
 
       it 'will return a 400 status' do
         expect(no_parameters[:status]).to eq(400)
