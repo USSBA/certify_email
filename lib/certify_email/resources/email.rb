@@ -1,7 +1,7 @@
 module CertifyEmail
   # Email class that handles getting and creating new Email objects
   class Email < Resource
-    def self.send(params = nil)
+    def self.send_email(params = nil)
       return CertifyEmail.bad_request if empty_params(params)
       response = connection.request(method: :post,
                                     path: build_create_emails_path,
