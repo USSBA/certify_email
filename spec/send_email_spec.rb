@@ -15,7 +15,7 @@ RSpec.describe CertifyEmail do
         }
       end
 
-      let(:send_email) { CertifyEmail::Email.send(email_parameters) }
+      let(:send_email) { CertifyEmail::Email.send_email(email_parameters) }
 
       # before do
       #   Excon.stub({method: :post}, status: 200)
@@ -28,29 +28,15 @@ RSpec.describe CertifyEmail do
   end
 
   describe "with incorrect parameters" do
-    context 'with no parameters' do
-      let(:no_parameters) { CertifyEmail::Email.send }
-
+    context 'with no paramters' do
+      
+      let(:no_parameters) { CertifyEmail::Email.send_email }
+      
       it 'will return a 400 status' do
         expect(no_parameters[:status]).to eq(400)
       end
       it 'will return a no parameters error message' do
         expect(no_parameters[:body]).to match('Bad Request')
-      end
-    end
-    context 'with no valid paramters' do
-      let(:bad_parameters) do
-        {
-          foo: "bar"
-        }
-      end
-      let(:invalid_email) { CertifyEmail::Email.send(bad_parameters) }
-
-      it 'will return a 400 status' do
-        expect(invalid_email[:status]).to eq(422)
-      end
-      it 'will return a no parameters error message' do
-        expect(invalid_email[:body]).to match('Unprocessable Entity')
       end
     end
   end
