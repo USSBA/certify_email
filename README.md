@@ -57,24 +57,25 @@ end
 
 This gem will send a request to the Email API to a given email address with the send method. This method requires that the address, a message, and the template used to format the email be passed in as parameters. Currently the only available template is the "basic_template".
 ```
-CertifyEmail::Email.send{
-  email: 'foo@bar.com',
+CertifyEmail::Email.send_email(
+  recipient: 'foo@bar.com',
   message: 'This is a message',
-  template: 'basic_template'
-}
+  template: 'basic_template',
+  subject: 'This is a subject'
+)
 ```
 
 
 ## Error Handling
 * Calling a Gem method with no or empty parameters, e.g.:
 ```
-CertifyEmail::Email.send {}
+CertifyEmail::Email.send ()
 ```
 will return a bad request:
 `{body: "Bad Request: No parameters submitted", status: 400}`
 * Calling a Gem method with invalid parameters:
 ```
-CertifyEmail::Email.send {foo: 'bar'}
+CertifyEmail::Email.send (foo: 'bar')
 ```
 will return an unprocessable entity error:
 `{body: "Unprocessable Entity: Invalid parameters submitted", status: 422}`
