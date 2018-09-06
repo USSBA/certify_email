@@ -4,18 +4,28 @@ This is a thin wrapper for the [Email API](https://github.com/USSBA/email_api) t
 
 
 #### Table of Contents
-- [Installation](#user-content-installation)
-- [Usage](#user-content-usage)
-    - [Configuration](#user-content-configuration)
-    - [Email](#user-content-email)
-- [Error Handling](#user-content-error-handling)
+- [Installation](#installation)
+- [Usage](#usage)
+    - [Configuration](#configuration)
+    - [Email](#email)
+- [Error Handling](#error&nbsp;handling)
 - [Logging](#logging)
-- [Development](#user-content-development)
+- [Development](#development)
+- [Publishing](#publishing)
 - [Changelog](#changelog)
 
 ## Installation
 
-There are two options you can use to install the gem. Building it manually, or installing from GitHub.
+There are three options you can use to install the gem. Pulling from the private sba-one gem server, building it manually, or installing directly from GitHub.
+
+### Pulling from private geminabox (preferred)
+
+Ensure you have the credentials configured with bundler, then add the following to your Gemfile:
+```
+source 'https://<domain-of-our-private-gem-server>/' do
+  gem 'certify_documents'
+end
+```
 
 ### Install from GitHub
 
@@ -102,6 +112,13 @@ Use `console` to access the pry console and add the API URL to the gem's config 
 CertifyEmail.configuration.api_url="http://localhost:3008"
 ```
 While working in the console, you can run `reload!` to reload any code in the gem so that you do not have to restart the console.  This should not reset the manual edits to the `configuration` as noted above.
+
+## Publishing
+To release a new version:
+  1. Bump the version in lib/\*/version.rb
+  1. Merge into `master` (optional)
+  1. Push a tag to GitHub in the form: `X.Y.Z` or `X.Y.Z.pre.myPreReleaseTag`
+ At this point, our CI process will kick-off, run the tests, and push the built gem into our Private Gem server.
 
 ## Changelog
 Refer to the changelog for details on API updates. [CHANGELOG](CHANGELOG.md)
