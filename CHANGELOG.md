@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.3.0] - 2018-11-21
+### shared-services-sprint-56
+### Added
+  - HUB-1686 Adds api_key to configuration in anticipation of AWS API Gateway
+
 ## [0.2.0] - 2018-05-25
 ### shared-services-sprint-43
 ### Changed
