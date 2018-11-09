@@ -57,11 +57,13 @@ Set the Certify Email API URL in your apps `config/initializers` folder, you pro
 
 ```
 CertifyEmail.configure do |config|
+  config.api_key = "your_api_key"
   config.api_url = "http://localhost:3008"
   config.api_version = 1
   config.excon_timeout = 5
 end
 ```
+The `api_key` is currently unused, but we anticipate adding in an API Gateway layer in the future.
 
 ### Email
 
