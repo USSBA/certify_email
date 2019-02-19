@@ -13,6 +13,9 @@ This is a thin wrapper for the [Email API](https://github.com/USSBA/email_api) t
 - [Development](#development)
 - [Publishing](#publishing)
 - [Changelog](#changelog)
+- [License](#license)
+- [Contributing](#contributing)
+- [Security Issues](#security-issues)
 
 ## Installation
 
@@ -124,3 +127,24 @@ To release a new version:
 
 ## Changelog
 Refer to the changelog for details on API updates. [CHANGELOG](CHANGELOG.md)
+
+## License
+Certify Email is licensed permissively under the Apache License v2.0.
+A copy of that license is distributed with this software.
+
+## Contributing
+We welcome contributions. Please read [CONTRIBUTING](CONTRIBUTING.md) for how to contribute.
+
+We strive for a welcoming and inclusive environment for the Certify Email project.
+
+Please follow this guidelines in all interactions:
+
+1. Be Respectful: use welcoming and inclusive language.
+2. Assume best intentions: seek to understand other's opinions.
+
+## Security Issues
+Please do not submit an issue on GitHub for a security vulnerability. Please contact the development team through the Certify Help Desk at [help@certify.sba.gov](mailto:help@certify.sba.gov).
+
+Be sure to include all the pertinent information.
+
+<sub>The agency reserves the right to change this policy at any time.</sub>
