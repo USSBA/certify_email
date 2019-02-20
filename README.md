@@ -51,7 +51,7 @@ Within the host application, set the Certify Email API URL in `config/initialize
 CertifyEmail.configure do |config|
   config.api_key = "your_api_key"
   config.api_url = "http://localhost:3000"
-  config.msg_api_version = 1
+  config.api_version = 1
   config.excon_timeout = 5
 end
 ```
