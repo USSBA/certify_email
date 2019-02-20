@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file.
 ### Added
   - HUB-1832
     - Updated for open sourcing
+  - HUB-1821
+    - Update documentation to new format
 
 ## [0.3.0] - 2018-11-21
 ### shared-services-sprint-56
