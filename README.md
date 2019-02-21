@@ -2,14 +2,14 @@
 Thin wrapper for the [Email API](https://github.com/USSBA/email-api) to handle basic GET and POST operations for email entries.
 
 #### Table of Contents
-- [Installation](#user-content-installation)
-- [Configuration](#user-content-configuration)
-- [Methods](#user-content-methods)
-- [Error Handling](#user-content-error-handling)
-- [Logging](#user-content-logging)
-- [Development](#user-content-development)
-- [Publishing](#user-content-publishing)
-- [Changelog](#user-content-changelog)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Methods](#methods)
+- [Error Handling](#error-handling)
+- [Logging](#logging)
+- [Development](#development)
+- [Publishing](#publishing)
+- [Changelog](#changelog)
 - [License](#license)
 - [Contributing](#contributing)
 - [Security Issues](#security-issues)
