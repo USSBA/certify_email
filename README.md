@@ -1,5 +1,5 @@
 # CertifyEmail
-Thin wrapper for the [Email API](https://github.com/USSBA/email_api) to handle basic GET and POST operations for email entries.
+Thin wrapper for the [Email API](https://github.com/USSBA/email-api) to handle basic GET and POST operations for email entries.
 
 #### Table of Contents
 - [Installation](#user-content-installation)
@@ -58,12 +58,12 @@ end
 The `api_key` is currently unused, but we anticipate adding in an API Gateway layer in the future.
 
 ## Methods
-Refer to the [Certify Email API](https://github.com/USSBA/email-api) for more complete documentation and detailed examples of method responses.
+Refer to the [Email API](https://github.com/USSBA/email-api) for more complete documentation and detailed examples of method responses.
 
 ### Email
 | Method | Description |
 | ------ | ----------- |
-| `CertifyEmail::Email.send_email( recipient: 'foo@bar.com', message: 'This is a message', template: 'basic_template', subject: 'This is a subject' )` | Send a request to the Email API for a given email address with the send method. This method requires that the address, a message, and the template used to format the email be passed in as parameters. Currently the only available template is the "basic_template"|
+| `CertifyEmail::Email.send_email( recipient: 'foo@bar.com', message: 'This is a message', template: 'basic_template', subject: 'This is a subject' )` | Send a request to the Email API for a given email address with the send method. This method requires that the address, a message, and the template used to format the email be passed in as parameters. Currently the only available template is `basic_template` |
 
 ## Error Handling
 
