@@ -1,3 +1,9 @@
+# DEPRECATION NOTICE
+
+**This project has been deprecated**
+
+--------
+
 # CertifyEmail
 Thin wrapper for the [Email API](https://github.com/USSBA/email-api) to handle basic GET and POST operations for email entries.
 
